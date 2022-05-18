@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/images">
+
+    <fragment
+        android:id="@+id/images"
+        android:name="cosmas.egbosi.photosapp.ui.images.Images"
+        android:label="fragment_images"
+        tools:layout="@layout/fragment_images" >
+        <action
+            android:id="@+id/action_imagesFragment_to_imageDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:destination="@id/imageDetailsFragment"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_in_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/imageDetailsFragment"
+        android:name="cosmas.egbosi.photosapp.ui.image_details.ImageDetailsFragment"
+        android:label="fragment_image_details"
+        tools:layout="@layout/fragment_image_details">
+        <argument
+            android:name="imageDetails"
+            app:argType="cosmas.egbosi.photosapp.domain.model.PixaImage"
+            />
+
+    </fragment>
+
+</navigation>
