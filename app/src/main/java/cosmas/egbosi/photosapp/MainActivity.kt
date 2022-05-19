@@ -23,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
     external  fun getPixaApiKey(): String?
-    private  val PKEY = getPixaApiKey()
+private  val PKEY = getPixaApiKey()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,10 +33,9 @@ import dagger.hilt.android.AndroidEntryPoint
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.findNavController()
 
-        setSupportActionBar(binding.toolbar)
+        //setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController)
 
-        Log.i("KKEYS",  "oncreate  " + getPixaApiKey())
         Log.i("KEYS",  "$PKEY")
     }
 
